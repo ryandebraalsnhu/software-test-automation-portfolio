@@ -6,7 +6,7 @@ When writing code it is important to validate the data you are working with on e
 When you receive the data from an external source, validate that it is not null and that it 
 is in the expected format. When iterating across a collection validate that the collection 
 itself is not null and that it has conents. When working with objects, be sure to validate 
-each attributes data type.
+each field's data type.
 
 ## How do I interpret user needs and incorporate them into a program?
 
@@ -25,7 +25,7 @@ against.
 Personally, I always employee a "fail fast" philosophy, which is sometimes known as 
 "defensive programming". (Contieri, 2020) Whenever I write code, I immedietly try to determine 
 if the data is valid. If it isn't, I stop working with it immediately and return a well 
-formatted exception. It is pointless to try to shove bad data through business logic.
+formatted exception. It is pointless to try to "shove bad data" through the business logic.
 
 
 Very often I see code which looks like this:
@@ -54,7 +54,7 @@ if (collection != null) {
 
 This is needlessly convoluted "spagetti code". This same logic could be refactored to read 
 more cleanly and be more robust by simply testing the data and stopping progress (fail fast) 
-as soon as the data isn't viable.
+as soon as the data isn't viable:
 
 ```
 if (collection == null || collection.Data == null || !collection.Data.Any())
